@@ -1,0 +1,139 @@
+/* ============================================================================
+ * TAILWIND CSS CONFIGURATION
+ * This file contains Tailwind CSS directives and custom component classes
+ * ============================================================================ */
+
+/* Tailwind Directives
+ * These are the core Tailwind CSS directives that inject Tailwind's styles
+ * @tailwind base - Injects Tailwind's base styles and any base styles registered by plugins
+ * @tailwind components - Injects Tailwind's component classes and any component classes registered by plugins
+ * @tailwind utilities - Injects Tailwind's utility classes and any utility classes registered by plugins
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom CSS Variables
+ * These variables can be used to define custom colors or styles
+ * They are defined in the :root selector so they are globally available
+ */
+
+:root {
+  --color-primary: #3bf683; /* You can change this to your brand color */
+}
+
+/* Custom Tailwind Component Classes
+ * These custom classes extend Tailwind with reusable components
+ * All classes defined in the @layer components directive will be processed as part of Tailwind's component layer
+ */
+@layer components {
+  /* Button Components
+   * These classes define different button styles that can be used throughout the site
+   * .btn - Base button style with padding and rounded corners
+   * .btn-primary - Primary action button with brand color background
+   * .btn-secondary - Secondary action button with gray background
+   * .btn-outline - Outlined button with brand color border
+   */
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #1f2937;
+  }
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+  .btn-outline {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Card Components
+   * These classes define card-based UI elements for displaying content in boxes
+   * .card - Container with background, rounded corners and shadow
+   * .card-body - Inner padding for card content
+   * .card-title - Title styling for cards
+   */
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  .card-body {
+    padding: 1.5rem;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Layout Utilities
+   * These classes help with page layout and content positioning
+   * .container-custom - Responsive container with maximum width and auto margins
+   */
+  .container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Section Styles
+   * These classes define the appearance of content sections
+   * .section - Vertical padding that increases on larger screens
+   * .section-title - Large, centered heading for section titles
+   */
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}

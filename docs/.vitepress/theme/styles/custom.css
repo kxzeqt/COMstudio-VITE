@@ -1,0 +1,73 @@
+/**
+ * Custom CSS Overrides for VitePress
+ * This file is loaded last to ensure it overrides all other styles
+ */
+
+/* Force overriding brand colors */
+:root {
+  --vp-c-brand: #0066cc !important;
+  --vp-c-brand-light: #0080ff !important;
+  --vp-c-brand-lighter: #3399ff !important;
+  --vp-c-brand-dark: #004c99 !important;
+  --vp-c-brand-darker: #003366 !important;
+}
+
+/* Dark mode overrides if needed */
+.dark {
+  --vp-c-brand: #0080ff !important;
+  --vp-c-brand-light: #3399ff !important;
+  --vp-c-brand-lighter: #66b3ff !important;
+  --vp-c-brand-dark: #0066cc !important;
+  --vp-c-brand-darker: #004c99 !important;
+}
+
+/* Override specific UI elements that might be using hardcoded colors */
+.VPButton.brand {
+  background-color: var(--vp-c-brand) !important;
+  border-color: var(--vp-c-brand-dark) !important;
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-c-brand-light) !important;
+  border-color: var(--vp-c-brand) !important;
+}
+
+/* Fix for buttons in the navigation */
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-brand) !important;
+}
+
+/* Fix for sidebar active links */
+.VPSidebarItem.active .link {
+  color: var(--vp-c-brand) !important;
+}
+
+/* Fix for custom blocks */
+.custom-block.tip {
+  border-color: var(--vp-c-brand) !important;
+}
+
+/* Fix for search highlights */
+.VPLocalSearchHighlight {
+  background-color: var(--vp-c-brand-lighter) !important;
+}
+
+/* Custom Quote/Testimonial Styling */
+.testimonial-quote {
+  border-left: 4px solid var(--vp-c-brand) !important;
+  padding: 16px 24px;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  margin: 24px 0;
+  font-style: italic;
+}
+
+/* Support for custom VitePress container if needed */
+.custom-block.quote {
+  border-left: 4px solid var(--vp-c-brand) !important;
+  padding: 16px 24px;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  margin: 24px 0;
+  font-style: italic;
+}
